@@ -55,5 +55,5 @@ file(WRITE ${CMAKE_BINARY_DIR}/remove_stale_executables.cmake "
     endforeach()
 ")
 
-# Ensure the clean_stale_executables target runs before building any other target
-# add_dependencies(${PROJECT_NAME} clean_stale_executables)
+# Ensure the clean_stale_executables target runs after building all executables
+add_dependencies(clean_stale_executables ${EXE_NAME})
