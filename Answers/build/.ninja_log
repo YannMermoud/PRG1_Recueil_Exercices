@@ -1,0 +1,11 @@
+# ninja log v6
+69	3085	7489492178460998	CMakeFiles/helloworld.dir/main2.cpp.obj	52200201e9b767b0
+3	24	7488132028598318	clean	9c4b4372737ab8da
+78	439	7489528048668108	build.ninja	602b9a229db59e6d
+16	64	7489513266784130	C:/Users/yannm/Documents/HEIG-VD/PRG_1/PRG1_Recueil_Exercices/Answers/build/CMakeFiles/cmake.verify_globs	b5bf3cd28fe0e693
+32	640	7488681830666588	CMakeFiles/main.dir/main.cpp.obj	a6200b5c2a44dbce
+13	675	7488685201512436	CMakeFiles/main2.dir/main2.cpp.obj	bcccb290b99ac5cc
+66	737	7489492331430449	CMakeFiles/helloworld.dir/main.cpp.obj	92d64fc06f1e4104
+108	241	7489503054987000	CMakeFiles/Exercice9.dir/tempCodeRunnerFile.cpp.obj	aecf6bf51d3c573f
+69	736	7489513267313174	CMakeFiles/Exercice9.dir/Exercice9.cpp.obj	e13557fc77b0c164
+798	1009	7489512720028706	Exercice9.exe	239961315ce66e0b
