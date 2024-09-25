@@ -10,6 +10,6 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 .DS_Store
-build/
+**/build/
 Exercices_PRG1.code-workspace
-.vscode
+**/.vscode/
