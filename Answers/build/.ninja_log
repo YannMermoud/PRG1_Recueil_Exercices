@@ -1,11 +1,17 @@
 # ninja log v6
-69	3085	7489492178460998	CMakeFiles/helloworld.dir/main2.cpp.obj	52200201e9b767b0
-3	24	7488132028598318	clean	9c4b4372737ab8da
-78	439	7489529724014203	build.ninja	602b9a229db59e6d
-16	64	7489513266784130	C:/Users/yannm/Documents/HEIG-VD/PRG_1/PRG1_Recueil_Exercices/Answers/build/CMakeFiles/cmake.verify_globs	b5bf3cd28fe0e693
 32	640	7488681830666588	CMakeFiles/main.dir/main.cpp.obj	a6200b5c2a44dbce
-13	675	7488685201512436	CMakeFiles/main2.dir/main2.cpp.obj	bcccb290b99ac5cc
-66	737	7489492331430449	CMakeFiles/helloworld.dir/main.cpp.obj	92d64fc06f1e4104
+88	191	7489583365637170	test.exe	5803b22874008cdd
+47	110	7489583399015385	C:/Users/yannm/Documents/HEIG-VD/PRG_1/PRG1_Recueil_Exercices/Answers/build/CMakeFiles/clean_stale_executables	9a6228836a7b2348
+40	385	7489577799322383	CMakeFiles/Exercice9.dir/Exercice9.cpp.obj	e13557fc77b0c164
+14	44	7489583398692316	C:/Users/yannm/Documents/HEIG-VD/PRG_1/PRG1_Recueil_Exercices/Answers/build/CMakeFiles/cmake.verify_globs	b5bf3cd28fe0e693
+47	110	7489583399015385	CMakeFiles/clean_stale_executables	9a6228836a7b2348
+40	88	7489583365159520	CMakeFiles/test.dir/test.cpp.obj	f28b249944eb06fb
 108	241	7489503054987000	CMakeFiles/Exercice9.dir/tempCodeRunnerFile.cpp.obj	aecf6bf51d3c573f
-69	736	7489513267313174	CMakeFiles/Exercice9.dir/Exercice9.cpp.obj	e13557fc77b0c164
-798	1009	7489512720028706	Exercice9.exe	239961315ce66e0b
+57	102	7489583005217935	CMakeFiles/test2.dir/test2.cpp.obj	11910c22780b97a2
+14	135	7489579303791522	Exercice9.exe	69b1fa00d2f57566
+3	24	7488132028598318	clean	9c4b4372737ab8da
+69	3085	7489492178460998	CMakeFiles/helloworld.dir/main2.cpp.obj	52200201e9b767b0
+66	737	7489492331430449	CMakeFiles/helloworld.dir/main.cpp.obj	92d64fc06f1e4104
+13	675	7488685201512436	CMakeFiles/main2.dir/main2.cpp.obj	bcccb290b99ac5cc
+34	237	7489583589461296	build.ninja	602b9a229db59e6d
+37	80	7489560569231620	CMakeFiles/tempCodeRunnerFile.dir/tempCodeRunnerFile.cpp.obj	18e24eab7b5b84ff

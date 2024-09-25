@@ -27,7 +27,8 @@ int main() {
 
     volume = pi * rayon_cylindre_1 * rayon_cylindre_1 * hauteur_cylindre_1 + pi * rayon_cylindre_2 * rayon_cylindre_2 * hauteur_cylindre_2 + hauteur_cone * pi / 3 * (rayon_cylindre_1 * rayon_cylindre_1 + rayon_cylindre_2 * rayon_cylindre_2 + rayon_cylindre_1 * rayon_cylindre_2);
 
-    string plural(volume < 2) ? ('\n') : ('s\n');
+    string plural = "";
+    // plural = (volume < 2) ? ('\n') : ('s\n');
     cout << "la contenance de la bouteille est de "
          << volume * CM3_TO_LITER
          << " litre"

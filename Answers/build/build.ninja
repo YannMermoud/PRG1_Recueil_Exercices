@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: EXERCICES_1
+# Project: Exercices_PRG1
 # Configurations: Debug
 # =============================================================================
 
@@ -55,12 +55,6 @@ build CMakeFiles/Exercice9.dir/Exercice9.cpp.obj: CXX_COMPILER__Exercice9_unscan
   OBJECT_DIR = CMakeFiles\Exercice9.dir
   OBJECT_FILE_DIR = CMakeFiles\Exercice9.dir
 
-build CMakeFiles/Exercice9.dir/tempCodeRunnerFile.cpp.obj: CXX_COMPILER__Exercice9_unscanned_Debug C$:/Users/yannm/Documents/HEIG-VD/PRG_1/PRG1_Recueil_Exercices/Answers/tempCodeRunnerFile.cpp || cmake_object_order_depends_target_Exercice9
-  DEP_FILE = CMakeFiles\Exercice9.dir\tempCodeRunnerFile.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -Wall -Wextra -Wpedantic -g
-  OBJECT_DIR = CMakeFiles\Exercice9.dir
-  OBJECT_FILE_DIR = CMakeFiles\Exercice9.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Exercice9
@@ -69,7 +63,7 @@ build CMakeFiles/Exercice9.dir/tempCodeRunnerFile.cpp.obj: CXX_COMPILER__Exercic
 #############################################
 # Link the executable Exercice9.exe
 
-build Exercice9.exe: CXX_EXECUTABLE_LINKER__Exercice9_Debug CMakeFiles/Exercice9.dir/Exercice9.cpp.obj CMakeFiles/Exercice9.dir/tempCodeRunnerFile.cpp.obj
+build Exercice9.exe: CXX_EXECUTABLE_LINKER__Exercice9_Debug CMakeFiles/Exercice9.dir/Exercice9.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Exercice9.dir
@@ -78,6 +72,12 @@ build Exercice9.exe: CXX_EXECUTABLE_LINKER__Exercice9_Debug CMakeFiles/Exercice9
   TARGET_FILE = Exercice9.exe
   TARGET_IMPLIB = libExercice9.dll.a
   TARGET_PDB = Exercice9.exe.dbg
+
+
+#############################################
+# Utility command for clean_stale_executables
+
+build clean_stale_executables: phony CMakeFiles/clean_stale_executables
 
 
 #############################################
@@ -102,6 +102,13 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Custom command for CMakeFiles\clean_stale_executables
+
+build CMakeFiles/clean_stale_executables | ${cmake_ninja_workdir}CMakeFiles/clean_stale_executables: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\yannm\Documents\HEIG-VD\PRG_1\PRG1_Recueil_Exercices\Answers\build && C:\msys64\mingw64\bin\cmake.exe -P C:/Users/yannm/Documents/HEIG-VD/PRG_1/PRG1_Recueil_Exercices/Answers/build/remove_stale_executables.cmake"
+
 # =============================================================================
 # Target aliases.
 
@@ -115,7 +122,7 @@ build Exercice9: phony Exercice9.exe
 #############################################
 # Folder: C:/Users/yannm/Documents/HEIG-VD/PRG_1/PRG1_Recueil_Exercices/Answers/build
 
-build all: phony Exercice9.exe
+build all: phony Exercice9.exe clean_stale_executables
 
 # =============================================================================
 # Built-in targets
