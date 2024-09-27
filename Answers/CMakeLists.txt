@@ -3,11 +3,18 @@ cmake_minimum_required(VERSION 3.12)
 # Set project name and compiler
 project(Exercices_PRG1)
 
-set(CMAKE_CXX_COMPILER g++)
+set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXECUTABLE_SUFFIX ".exe") # On Windows, executables have .exe suffix
 
-add_compile_options(-Wall -Wextra -Wpedantic -g)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fdiagnostics-color=always")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fdiagnostics-color=always")
+
+set(CMAKE_COLOR_DIAGNOSTICS on)
+
+add_compile_options(-Wall -Wextra -Wpedantic -g -Wimplicit-fallthrough -fdiagnostics-color=always)
 
 # Collect all .cpp files in the current directory
 file(GLOB CPP_FILES CONFIGURE_DEPENDS "*.cpp")
