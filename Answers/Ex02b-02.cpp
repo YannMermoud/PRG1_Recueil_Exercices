@@ -7,6 +7,15 @@ void permutation(double &x, double &y, double &z) {
     y = z;
     z = temp;
 }
+void permutation_without_temp(double &x, double &y, double &z) {
+    x = y + x;
+    y = x - y;
+    x = x - y;
+
+    y = y + z;
+    z = y - z;
+    y = y - z;
+}
 int main() {
     double x, y, z;
 
@@ -14,6 +23,10 @@ int main() {
     cin >> x >> y >> z;
 
     permutation(x, y, z);
+
+    cout << "\nx = " << x << "\ny = " << y << "\nz = " << z << endl;
+
+    permutation_without_temp(x, y, z);
 
     cout << "\nx = " << x << "\ny = " << y << "\nz = " << z;
     return 0;
