@@ -9,12 +9,7 @@ set(CMAKE_EXECUTABLE_SUFFIX ".exe") # On Windows, executables have .exe suffix
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fdiagnostics-color=always")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fdiagnostics-color=always")
-
-set(CMAKE_COLOR_DIAGNOSTICS on)
-
-add_compile_options(-Wall -Wextra -Wpedantic -g -Wimplicit-fallthrough -fdiagnostics-color=always)
+add_compile_options(-Wall -Wextra -Wpedantic -g -Wimplicit-fallthrough)
 
 # Collect all .cpp files in the current directory for executables
 file(GLOB CPP_FILES CONFIGURE_DEPENDS "*.cpp")
