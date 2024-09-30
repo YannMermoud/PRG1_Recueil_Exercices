@@ -1,4 +1,4 @@
-# Volume d'une bouteille 
+# Volume d'une bouteille
 
 Comme illustré ci-dessous, la forme d'une bouteille peut s'approximer par deux cylindres, de rayons r1 et r2 et de hauteurs h1 et h2, joints par un cône tronqué de hauteur h3.
 
@@ -13,6 +13,7 @@ $$\pi * r^2 * h$$
 $$(r1^2 + r2^2 + r1 * r2) * h * \pi / 3$$
 
 Exemple d'exécution :
+
 ~~~
 Entrez le rayon du cylindre 1 [cm]      : 4
 Entrez le rayon du cylindre 2 [cm]      : 1
@@ -69,9 +70,5 @@ int main() {
     return EXIT_SUCCESS;
 }
 ~~~
-   
-   
-
-
 
 </details>
