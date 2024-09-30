@@ -7,9 +7,9 @@ int main() {
 
     do {
         cout << "Hauteur du triangle (h > 0) : ";
-        if (cin >> hauteur and hauteur != 0) {
-            break;
-        }
+        // if (cin >> hauteur and hauteur != 0) {
+        //  break;
+        //}
     } while (true);
 
     cout << endl;
