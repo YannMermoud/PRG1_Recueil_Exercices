@@ -3,18 +3,20 @@
 Créer une librairie qui met à disposition 2 fonctions
 
 1. *saisir(..)* qui recoit 3 paramètres
-	- le message à afficher de type *string*
-	- la valeur min
-	- la valeur max
-	
-	La fonction retourne la valeur saisie dans l'intervalle [min .. max].
-	<br>**NB** les erreurs de flux ne sont pas gérées
+
+- le message à afficher de type *string*
+- la valeur min
+- la valeur max
+
+ La fonction retourne la valeur saisie dans l'intervalle [min .. max].
+ <br>**NB** les erreurs de flux ne sont pas gérées
 
 2. *afficher(..)* qui recoit 2 paramètres
-	- le message à afficher de type *string*
-	- la valeur à afficher
 
-	Aucune valeur de retour est prévue.
+- le message à afficher de type *string*
+- la valeur à afficher
+
+ Aucune valeur de retour est prévue.
 
 **Important**
 
