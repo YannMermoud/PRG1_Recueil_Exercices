@@ -1,15 +1,19 @@
+#include <cstdint>
 #include <iostream>
 
 using namespace std;
 
+constexpr char foreground = '-';
+constexpr char background = '+';
+
 int main() {
-    unsigned long hauteur = 0;
+    uint64_t hauteur = 0;
 
     do {
         cout << "Hauteur du triangle (h > 0) : ";
-        // if (cin >> hauteur and hauteur != 0) {
-        //  break;
-        //}
+        if (cin >> hauteur and hauteur != 0) {
+            break;
+        }
     } while (true);
 
     cout << endl;
@@ -18,9 +22,9 @@ int main() {
         for (unsigned long y(0); y < 2 * hauteur - 1; ++y) {
             if ((y < hauteur - 1 - x) or
                 (y > hauteur - 1 + x)) {
-                cout << ".";
+                cout << background;
             } else {
-                cout << "*";
+                cout << foreground;
             }
         }
         cout << "\n";
