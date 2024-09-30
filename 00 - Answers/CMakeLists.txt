@@ -16,16 +16,61 @@ set(CMAKE_COLOR_DIAGNOSTICS on)
 
 add_compile_options(-Wall -Wextra -Wpedantic -g -Wimplicit-fallthrough -fdiagnostics-color=always)
 
-# Collect all .cpp files in the current directory
+# Collect all .cpp files in the current directory for executables
 file(GLOB CPP_FILES CONFIGURE_DEPENDS "*.cpp")
 
-# For each .cpp file, create an executable
+# Collect all subdirectories (assumed to be potential libraries)
+file(GLOB LIBRARY_DIRS CONFIGURE_DEPENDS */)
+
+# Container for the dynamically created libraries
+set(LIBRARY_TARGETS)
+
+# Loop over each subdirectory and create a library target
+foreach(DIR ${LIBRARY_DIRS})
+    # Check if the directory has a .cpp file to determine if it's a library
+    file(GLOB LIBRARY_SOURCES "${DIR}/*.cpp")
+    if(LIBRARY_SOURCES)
+        # Extract library name from directory name
+        get_filename_component(LIB_NAME ${DIR} NAME)
+        
+        # Create a library target for this directory
+        add_library(${LIB_NAME} STATIC ${LIBRARY_SOURCES})
+        
+        # Include the directory for header file search
+        include_directories(${DIR})
+        
+        # Add this library to the list of targets
+        list(APPEND LIBRARY_TARGETS ${LIB_NAME})
+    endif()
+endforeach()
+
+# List of executables and their required libraries
+set(EXE_LIBRARIES)
+
+# For each .cpp file, create an executable and link necessary libraries
 foreach(CPP_FILE ${CPP_FILES})
     # Extract the file name without an extension
     get_filename_component(EXE_NAME ${CPP_FILE} NAME_WE)
     
     # Add an executable for each cpp file
     add_executable(${EXE_NAME} ${CPP_FILE})
+    
+    # Read the contents of the .cpp file
+    file(READ ${CPP_FILE} FILE_CONTENTS)
+
+    # Check for each library if its header is included in the .cpp file and link the library if found
+    foreach(LIB_NAME ${LIBRARY_TARGETS})
+        # Create the expected header file name (e.g., mylibrary/mylibrary.hpp)
+        set(LIB_HEADER "${LIB_NAME}/${LIB_NAME}.hpp")
+
+        # Link library if the .cpp file includes its header
+        if(FILE_CONTENTS MATCHES "#include[ ]*\"${LIB_HEADER}\"")
+            target_link_libraries(${EXE_NAME} PRIVATE ${LIB_NAME})
+        endif()
+    endforeach()
+
+    # Add the executable to the list of executables for custom targets
+    list(APPEND EXE_LIBRARIES ${EXE_NAME})
 endforeach()
 
 # Custom target to clean up stale executables
@@ -37,7 +82,7 @@ add_custom_target(clean_stale_executables ALL
 file(WRITE ${CMAKE_BINARY_DIR}/remove_stale_executables.cmake "
     # Get the list of executable files currently in the build directory
     file(GLOB EXE_FILES_IN_BUILD \"${CMAKE_BINARY_DIR}/*${CMAKE_EXECUTABLE_SUFFIX}\")
-
+    
     # For each executable file in the build directory
     foreach(EXE_FILE \${EXE_FILES_IN_BUILD})
         get_filename_component(EXE_NAME \${EXE_FILE} NAME_WE)
@@ -63,4 +108,4 @@ file(WRITE ${CMAKE_BINARY_DIR}/remove_stale_executables.cmake "
 ")
 
 # Ensure the clean_stale_executables target runs after building all executables
-add_dependencies(clean_stale_executables ${EXE_NAME})
+add_dependencies(clean_stale_executables ${EXE_LIBRARIES})
