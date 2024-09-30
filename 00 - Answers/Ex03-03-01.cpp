@@ -10,16 +10,16 @@ int main() {
 
     do {
         if (n % 2 == 0) {
-            cout << n << "/2 ";
+            cout << n << "/2 " << flush;
             n += 3;
             continue;
         }
         if (n % 3 == 0) {
-            cout << n << "/3 ";
+            cout << n << "/3 " << flush;
             n += 5;
         }
         if (n % 5 == 0) {
-            cout << n << "/5 ";
+            cout << n << "/5 " << flush;
             break;
         }
         ++n;
