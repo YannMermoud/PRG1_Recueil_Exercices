@@ -16,18 +16,19 @@ class Point {
         this->x = x;
         this->y = y;
     };
-    void afficher() {
-        cout << "(" << x << "," << y << ")" << endl;
-    };
+    void afficher() { cout << "(" << x << "," << y << ")" << endl; };
     void deplacer(double a, double b) {
         x += a;
         y += b;
     };
     double getX() { return x; };
     double getY() { return y; };
-    void setX(double x) { this->x = x; };
-    void setY(double y) { this->y = y; };
+    void setX(double x);
+    void setY(double y);
 };
+
+void Point::setX(double x) { this->x = x; }
+void Point::setY(double y) { this->y = y; }
 
 int main() {
     Point centre;
