@@ -10,10 +10,13 @@ int main() {
         cout << "Entrez l'indexe : ";
     } while (!(cin >> index or index != 0));
 
-    cout << "La suite de Fibonnacci jusqu'a l'indexe choisi est ";
+    cout << "La suite de Fibonnacci jusqu'a l'indexe choisi est :\n";
 
-    for (unsigned int i(0); i < index; ++i) {
-        cout << fibo(i) << " ";
+    for (unsigned int i(1); i <= index; ++i) {
+        cout << fibo(i - 1) << " ";
+        if (i % 10 == 0) {
+            cout << endl;
+        }
     }
 
     return 0;
