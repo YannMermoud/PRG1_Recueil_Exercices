@@ -8,7 +8,6 @@ constexpr char background = '+';
 
 int main() {
     uint64_t hauteur = 0;
-
     do {
         cout << "Hauteur du triangle (h > 0) : ";
         if (cin >> hauteur and hauteur != 0) {

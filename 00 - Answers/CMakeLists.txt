@@ -7,6 +7,8 @@ set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXECUTABLE_SUFFIX ".exe") # On Windows, executables have .exe suffix
 
+set(CMAKE_VERBOSE_MAKEFILE OFF)
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_compile_options(-Wall -Wextra -Wpedantic -g -Wimplicit-fallthrough)
