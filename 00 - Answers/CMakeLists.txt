@@ -6,9 +6,7 @@ project(Exercices_PRG1)
 set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXECUTABLE_SUFFIX ".exe") # On Windows, executables have .exe suffix
-
 set(CMAKE_VERBOSE_MAKEFILE OFF)
-
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_compile_options(-Wall -Wextra -Wpedantic -g -Wimplicit-fallthrough)
@@ -21,6 +19,9 @@ file(GLOB LIBRARY_DIRS CONFIGURE_DEPENDS */)
 
 # Container for the dynamically created libraries
 set(LIBRARY_TARGETS)
+
+# Set the output directory for static libraries to a "library" subfolder in the build directory
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/library)
 
 # Loop over each subdirectory and create a library target
 foreach(DIR ${LIBRARY_DIRS})
@@ -36,6 +37,9 @@ foreach(DIR ${LIBRARY_DIRS})
         # Include the directory for header file search
         include_directories(${DIR})
         
+        # Set library output to a specific subdirectory inside the build folder
+        set_target_properties(${LIB_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/library)
+
         # Add this library to the list of targets
         list(APPEND LIBRARY_TARGETS ${LIB_NAME})
     endif()
