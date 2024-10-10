@@ -9,7 +9,9 @@ set(CMAKE_EXECUTABLE_SUFFIX ".exe") # On Windows, executables have .exe suffix
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+add_compile_options(-finput-charset=UTF-8 -fexec-charset=UTF-8)
 add_compile_options(-Wall -Wextra -Wpedantic -g -Wimplicit-fallthrough)
+add_definitions(-DUNICODE -D_UNICODE)
 
 # Collect all .cpp files in the current directory for executables
 file(GLOB CPP_FILES CONFIGURE_DEPENDS "*.cpp")
