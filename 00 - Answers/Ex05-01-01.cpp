@@ -4,7 +4,7 @@
 int main() {
     std::string path_to_file;
 
-    std::cout << "Entrez le nom du fichier à écrire :\n";
+    std::cout << "Entrez le nom du fichier a ecrire :\n";
     std::getline(std::cin, path_to_file);
 
     std::ofstream myfile;
