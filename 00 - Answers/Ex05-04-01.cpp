@@ -9,6 +9,7 @@ void afficher(string name, int age, double math_result, double PRG_result);
 
 int main() {
     string name;
+    string buffer;
     int age;
     double math_result;
     double PRG_result;
@@ -16,7 +17,11 @@ int main() {
     cout << "Entrez le nom de l'etudiant : ";
     getline(cin, name);
     cout << endl << "Entrez son age : ";
-    cin >> age;
+    while (getline(cin, buffer)) {
+        if (age = stoi(buffer)) {
+            break;
+        }
+    };
     cout << endl << "Entrez sa note de math : ";
     cin >> math_result;
     cout << endl << "Entrez sa note de PRG : ";
