@@ -4,7 +4,7 @@
 
 using namespace std;
 
-double geomean(int a, int b);
+double arithmean(double a, double b);
 void afficher(string name, int age, double math_result, double PRG_result);
 
 int main() {
@@ -26,7 +26,7 @@ int main() {
     return EXIT_SUCCESS;
 }
 
-double geomean(double a, double b) { return (a + b) / 2.0; }
+double arithmean(double a, double b) { return (a + b) / 2.0; }
 
 void afficher(string name, int age, double math_result, double PRG_result) {
     int width_col_1 = 18;
@@ -42,7 +42,7 @@ void afficher(string name, int age, double math_result, double PRG_result) {
 
     cout << right << setw(width_total) << setfill('-') << "" << "\n";
 
-    double moyenne = geomean(math_result, PRG_result);
+    double moyenne = arithmean(math_result, PRG_result);
 
     cout << setfill(' ') << left << setw(width_col_1) << name << right
          << setw(width_col_2) << age << setw(width_col_3) << math_result
