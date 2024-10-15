@@ -1,15 +1,38 @@
+#include <cmath>
+#include <cstdint>
 #include <iostream>
+#include <vector>
 
 float Q_rsqrt(float number);
 
+using int8 = int8_t;
+
+class unl_int {
+   private:
+   public:
+    std::vector<int> array;
+    unl_int(auto arg);
+    ~unl_int();
+};
+
+unl_int::unl_int(auto arg) {
+    for (size_t i = 1; i < sizeof(arg) / sizeof(int); i++) {
+        array.push_back((arg / (i * sizeof(int))) % sizeof(int));
+    }
+}
+
+unl_int::~unl_int() { }
+
+std::ostream& operator<<(std::ostream& os, const unl_int& val) {
+    for (size_t i = 0; i < sizeof(unl_int) / sizeof(int); ++i) {
+        os << std::to_string(val.array[(sizeof(unl_int) / sizeof(int)) - i]);
+    }
+    return os;
+}
+
 int main() {
-    int temp;
-    int* p1_temp;
-    const int* p2_temp;
-    int const* p3_temp;
-    int* const p4_temp = &temp;
-    const int* const p5_temps = &temp;
-    std::cout << Q_rsqrt(4);
+    unl_int test(3);
+    std::cout << test;
     return EXIT_SUCCESS;
 }
 
