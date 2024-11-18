@@ -11,14 +11,12 @@ ostream& operator<<(ostream& os, const char* str) {
 
 template <typename Range>
 ostream& operator<<(ostream& os, const Range& table) {
-    os << "[";
     for (auto it = begin(table); it != end(table); ++it) {
         os << *it;
         if (next(it) != end(table)) {
             os << ", ";
         }
     }
-    os << "]";
     return os;
 }
 
