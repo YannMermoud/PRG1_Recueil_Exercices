@@ -2,7 +2,9 @@
 #include <iostream>
 
 using namespace std;
+
 double mantisse(double a, int& exposant, int base);
+
 int main() {
     double val;
     int exposant;
