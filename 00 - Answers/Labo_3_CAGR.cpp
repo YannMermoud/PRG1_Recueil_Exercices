@@ -4,7 +4,7 @@
 #include <limits>
 // F = D * (1 + CAGR)^A
 
-// double epsilon = std::numeric_limits<double>::epsilon();
+double epsilon = std::numeric_limits<double>::epsilon();
 static constexpr double precision = 5.;
 
 double calculate_CAGR(double F, double D, double A);
