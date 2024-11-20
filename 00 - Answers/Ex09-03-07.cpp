@@ -1,5 +1,7 @@
+#include <algorithm>  // for std::copy
 #include <array>
 #include <iostream>
+#include <iterator>  // for std::ostream_iterator
 #include <ostream>
 #include <span>
 #include <vector>
@@ -23,11 +25,13 @@ int main() {
     }
 }
 
-ostream& operator<<(ostream& os, span<const int> vec) {
+std::ostream& operator<<(std::ostream& os, std::span<const int> vec) {
     os << "[";
-    for (size_t i(0); i < vec.size(); i++) {
-        os << vec[i];
-        if (i != vec.size() - 1) os << ", ";
+    if (!vec.empty()) {
+        // Use ostream_iterator to handle formatting
+        std::copy(vec.begin(), vec.end() - 1,
+                  std::ostream_iterator<int>(os, ", "));
+        os << vec.back();  // Print the last element without a trailing comma
     }
     return os << "]";
 }
