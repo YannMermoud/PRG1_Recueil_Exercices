@@ -8,6 +8,7 @@ double mantisse(double a, int& exposant, int base);
 int main() {
     double val;
     int exposant;
+
     do {
         cout << "Entrez une valeure reelle : ";
         cin.clear();
