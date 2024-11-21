@@ -7,8 +7,8 @@
 #include <vector>
 
 using namespace std;
-ostream& operator<<(ostream& os, span<const int> vec);
-bool recherche(span<const int> vec, int value);
+ostream& operator<<(ostream& os, const span<const int>& vec);
+bool recherche(const span<const int>& vec, int value);
 
 int main() {
     for (vector<int> const& v : {vector<int>{1, 2, 3, 5, 7, 11, 13, 17},
@@ -25,7 +25,7 @@ int main() {
     }
 }
 
-std::ostream& operator<<(std::ostream& os, std::span<const int> vec) {
+std::ostream& operator<<(std::ostream& os, const std::span<const int>& vec) {
     os << "[";
     if (!vec.empty()) {
         // Use ostream_iterator to handle formatting
@@ -36,11 +36,11 @@ std::ostream& operator<<(std::ostream& os, std::span<const int> vec) {
     return os << "]";
 }
 
-bool recherche(span<const int> vec, int value) {
+bool recherche(const span<const int>& vec, int value) {
     size_t middle = (vec.size()) / 2;
     if (vec.empty()) return false;
     if (vec[middle] == value) return true;
 
     return (vec[middle] < value) ? (recherche(vec.subspan(middle + 1), value))
-                                 : (recherche(vec.subspan(0, middle), value));
+                                 : (recherche(vec.first(middle), value));
 }
