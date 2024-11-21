@@ -15,20 +15,20 @@ class unl_int {
     ~unl_int();
 };
 
-unl_int::unl_int(auto arg) {
-    for (size_t i = 1; i < sizeof(arg) / sizeof(int); i++) {
-        array.push_back((arg / (i * sizeof(int))) % sizeof(int));
-    }
-}
-
-unl_int::~unl_int() { }
-
 std::ostream& operator<<(std::ostream& os, const unl_int& val) {
     for (size_t i = 0; i < sizeof(unl_int) / sizeof(int); ++i) {
         os << std::to_string(val.array[(sizeof(unl_int) / sizeof(int)) - i]);
     }
     return os;
 }
+
+unl_int::unl_int(auto arg) {
+    for (size_t i = 1; i < sizeof(arg) / sizeof(int); i++) {
+        array.push_back((arg / (i * sizeof(int))) % sizeof(int));
+    }
+}
+
+unl_int::~unl_int() {}
 
 int main() {
     unl_int test(3);
